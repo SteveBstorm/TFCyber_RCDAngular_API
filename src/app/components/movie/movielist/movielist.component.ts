@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+import { MovieService } from '../../../services/movie.service';
+import { Movie } from '../../../models/movie.model';
+
+@Component({
+  selector: 'app-movielist',
+  templateUrl: './movielist.component.html',
+  styleUrl: './movielist.component.css'
+})
+export class MovielistComponent {
+
+  liste : Movie[] = []
+
+  constructor(private movieService : MovieService){
+    this.loadData()
+  }
+
+  loadData() {
+    this.movieService.getAll().subscribe({
+      next : (data : Movie[]) => { this.liste = data },
+      error : (error) => {console.log(error)}
+    })
+  }
+}
