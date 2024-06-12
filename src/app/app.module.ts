@@ -15,6 +15,7 @@ import { PersonlistComponent } from './components/person/personlist/personlist.c
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ProfilComponent } from './components/auth/profil/profil.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProfilComponent } from './components/auth/profil/profil.component';
     PersonlistComponent,
     LoginComponent,
     RegisterComponent,
-    ProfilComponent
+    ProfilComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

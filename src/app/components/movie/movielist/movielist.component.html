@@ -13,7 +13,7 @@
         <tbody>
           @for (movie of liste; track $index)
           {
-            <tr>
+            <tr (click)="selectMovie(movie.id)" style="cursor: pointer;">
               <td>{{movie.title}}</td>
               <td>{{movie.description}}</td>
             </tr>

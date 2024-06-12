@@ -1,2 +1,37 @@
-<p>moviedetail works!</p>
-{{currentMovie | json}}
+<fieldset class="justify-content-center">
+  <legend>{{currentMovie.title}}</legend>
+  <h5>{{currentMovie.description}}</h5>
+  <div style="display : flex; flex-direction : row;">
+      <div class="card w-25">
+          <div class="card-header text-white bg-dark mb-3">Réalisateur : {{currentMovie.realisator.firstname}} {{currentMovie.realisator.lastname}}</div>
+          <div class="card-body justify-content-center">
+              <img [src]="currentMovie.realisator.pictureURL" class="rounded" width="250px" />
+          </div>
+      </div>
+
+      <div class="card w-75">
+          <div class="card-header text-white bg-dark mb-3">Casting</div>
+          <div class="card-body">
+              <table class="table table-hover w-100">
+                  <thead>
+                     <tr>
+                          <th>Acteur</th>
+                          <th>Rôle</th>
+                          <th>Photo</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                      @for( a of currentMovie.casting; track $index)
+                      {
+                          <tr>
+                              <td>{{a.firstname}} {{a.lastname}}</td>
+                              <td>{{a.role}}</td>
+                              <td><img [src]="a.pictureURL" height="75px" /></td>
+                          </tr>
+                      }
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</fieldset>
