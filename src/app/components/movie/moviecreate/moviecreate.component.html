@@ -37,7 +37,7 @@
         @for (f of getCasting().controls; track $index)
         {
             <div [formGroupName]="$index" class="input-group">
-              <select class="form-select" formControlName="personId" aria-label="Default select example">
+              <select class="form-select" formControlName="id" aria-label="Default select example">
                 <option>Faites votre choix</option>
                   @for (p of listePerson; track $index) {
                     <option [value]="p.id">{{p.firstname}} {{p.lastname}}</option>

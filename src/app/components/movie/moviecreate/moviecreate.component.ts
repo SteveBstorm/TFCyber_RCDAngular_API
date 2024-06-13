@@ -39,7 +39,7 @@ export class MoviecreateComponent {
   addCastingRow(){
 
     this.getCasting().push(this.builder.group({
-      personId : [null, Validators.required],
+      id : [null, Validators.required],
       role : [null, Validators.required]
     }))
   }
@@ -53,6 +53,7 @@ export class MoviecreateComponent {
     let newmovie : MovieCreateForm = this.fg.value
 
     newmovie.casting.forEach(p => {
+
       p.firstname = this.listePerson.find(x => x.id== p.id)?.firstname ?? ""
       p.lastname = this.listePerson.find(x => x.id== p.id)?.lastname ?? ""
       p.pictureURL = this.listePerson.find(x => x.id== p.id)?.pictureURL ?? ""

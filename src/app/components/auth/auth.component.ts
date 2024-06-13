@@ -17,11 +17,16 @@ export class AuthComponent {
     authService.isConnectedSubject.subscribe({
       next : (value : boolean) => this.isConnected = value
     })
+    authService.isConnectedSubject.next(authService.isConnected)
   }
 
   logout(){
     this.authService.logout()
     this.router.navigate(["home"])
+  }
+
+  test() {
+    this.authService.decodeToken()
   }
 
 }
