@@ -1,1 +1,58 @@
-<p>moviecreate works!</p>
+@if(fg != undefined){
+  <form [formGroup]="fg" (ngSubmit)="validateForm()">
+
+
+
+  <div class="mb-3 col-6">
+    <label for="" class="form-label">Titre</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder=""
+      formControlName="title"
+    />
+    <label for="" class="form-label">Description</label>
+    <textarea
+
+      class="form-control"
+      placeholder=""
+      formControlName="description"
+    ></textarea>
+
+    <label for="" class="form-label">Realisateur</label>
+    <select class="form-control" formControlName="realisatorId">
+      <option selected>Faites votre choix</option>
+      @for (p of listePerson; track $index) {
+        <option [value]="p.id">{{p.firstname}} {{p.lastname}}</option>
+      }
+    </select>
+  </div>
+
+  <div class="card mb-3 col-9">
+    <div class="card-header">
+      <h3 class="card-title">Casting
+        <button type="button" class="btn btn-outline-dark btn-sm" (click)="addCastingRow()">+</button>
+      </h3>
+      <div class="card-body" formArrayName="casting">
+        @for (f of getCasting().controls; track $index)
+        {
+            <div [formGroupName]="$index" class="input-group">
+              <select class="form-select" formControlName="personId" aria-label="Default select example">
+                <option>Faites votre choix</option>
+                  @for (p of listePerson; track $index) {
+                    <option [value]="p.id">{{p.firstname}} {{p.lastname}}</option>
+                  }
+              </select>
+              <input type="text" class="form-control" formControlName="role"
+                placeholder="Role" />
+              <button type="button" class="btn btn-outline-danger btn-sm"
+                      (click)="removeCastingRow($index)">-</button>
+            </div>
+        }
+
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-outline-success">Valider</button>
+</form>
+}

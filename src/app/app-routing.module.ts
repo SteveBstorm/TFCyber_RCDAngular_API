@@ -5,11 +5,13 @@ import { MoviedetailComponent } from './components/movie/moviedetail/moviedetail
 import { LoginComponent } from './components/auth/login/login.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { movieResolver } from './shared/resolver/movie.resolver';
+import { MoviecreateComponent } from './components/movie/moviecreate/moviecreate.component';
 
 const routes: Routes = [
   {path : "", redirectTo : "movielist", pathMatch:'full'},
   {path : "movielist", component : MovielistComponent},
   {path : "moviedetail/:id", resolve: {toto : movieResolver}, component : MoviedetailComponent},
+  {path : "moviecreate", component : MoviecreateComponent},
   {path : "login", component : LoginComponent},
   {path : "**", component : ErrorComponent}
 ];

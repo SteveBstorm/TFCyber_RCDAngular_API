@@ -14,3 +14,7 @@ export interface MovieDetail {
   realisator : Person
   casting? : Actor[]
 }
+
+export interface MovieCreateForm extends Movie {
+  casting : Actor[]
+}
