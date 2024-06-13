@@ -29,4 +29,14 @@ export class MovielistComponent {
   selectMovie(id:number){
     this.router.navigate(["moviedetail", id])
   }
+
+  deleteMovie(id : number) {
+    this.movieService.delete(id).subscribe(
+      {
+      next : () => this.loadData()
+    })
+
+  }
+
+
 }

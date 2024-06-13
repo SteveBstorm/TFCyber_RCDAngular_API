@@ -27,4 +27,8 @@ export class MovieService {
     })
     return this.client.post(this.url, form, {headers : myheader})
   }
+
+  delete(id :number){
+    return this.client.delete(this.url+"/"+id)
+  }
 }
