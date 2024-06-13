@@ -16,6 +16,8 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ProfilComponent } from './components/auth/profil/profil.component';
 import { NavComponent } from './shared/nav/nav.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { ErrorComponent } from './shared/error/error.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NavComponent } from './shared/nav/nav.component';
     LoginComponent,
     RegisterComponent,
     ProfilComponent,
-    NavComponent
+    NavComponent,
+    AuthComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

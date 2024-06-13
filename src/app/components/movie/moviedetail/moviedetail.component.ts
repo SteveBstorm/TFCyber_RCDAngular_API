@@ -13,15 +13,16 @@ export class MoviedetailComponent {
   currentMovie! : MovieDetail
 
   constructor(
-    private movieService : MovieService,
+    //private movieService : MovieService,
     private ar : ActivatedRoute
   ){
-    this.id = ar.snapshot.params["id"]
+    this.currentMovie = ar.snapshot.data["toto"]
+    // this.id = ar.snapshot.params["id"]
 
-    movieService.getById(this.id).subscribe({
-      next : (data : MovieDetail) => {
-        this.currentMovie = data
-      }
-    })
+    // movieService.getById(this.id).subscribe({
+    //   next : (data : MovieDetail) => {
+    //     this.currentMovie = data
+    //   }
+    // })
   }
 }
