@@ -18,6 +18,7 @@ import { ProfilComponent } from './components/auth/profil/profil.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { ErrorComponent } from './shared/error/error.component';
+import { UpfileComponent } from './components/upfile/upfile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ErrorComponent } from './shared/error/error.component';
     ProfilComponent,
     NavComponent,
     AuthComponent,
-    ErrorComponent
+    ErrorComponent,
+    UpfileComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { movieResolver } from './shared/resolver/movie.resolver';
 import { MoviecreateComponent } from './components/movie/moviecreate/moviecreate.component';
+import { UpfileComponent } from './components/upfile/upfile.component';
 
 const routes: Routes = [
   {path : "", redirectTo : "movielist", pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path : "moviedetail/:id", resolve: {toto : movieResolver}, component : MoviedetailComponent},
   {path : "moviecreate", component : MoviecreateComponent},
   {path : "login", component : LoginComponent},
+  {path : "upfile", component : UpfileComponent},
   {path : "**", component : ErrorComponent}
 ];
 

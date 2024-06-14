@@ -1,0 +1,7 @@
+<p>upfile works!</p>
+<input type="file" (change)="loadFile($event)">
+<button (click)="startUpload()">Envoyer</button>
+<hr />
+@if(url != undefined) {
+  <img [src]="url">
+}
