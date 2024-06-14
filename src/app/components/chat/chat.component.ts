@@ -8,7 +8,7 @@ import * as signalr from '@microsoft/signalr';
   styleUrl: './chat.component.css'
 })
 export class ChatComponent {
-  hubConnection!: signalr.HubConnection
+ private hubConnection? : signalr.HubConnection
   url : string = "https://localhost:7158/chathub"
 
   listeMessage : Message[] = []
@@ -17,6 +17,7 @@ export class ChatComponent {
   username! : string
 
   constructor() {
+
     this.hubConnection = new signalr.HubConnectionBuilder().withUrl(this.url).build();
 
     this.hubConnection.start()
@@ -27,7 +28,7 @@ export class ChatComponent {
   }
 
   sendMessage() {
-    this.hubConnection.send("SendMessage", {username : this.username, content: this.content})
+    this.hubConnection?.send("SendMessage", {username : this.username, content: this.content})
   }
 }
 
