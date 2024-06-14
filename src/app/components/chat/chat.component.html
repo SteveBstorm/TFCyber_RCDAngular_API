@@ -1,0 +1,22 @@
+<p>chat works!</p>
+<div class="card-border-info">
+  <div>
+    <p >
+      Votre nom : <input class="form-control" type="text" [(ngModel)]="username" />
+    </p>
+    <p >
+      Contenu : <input class="form-control" type="text" [(ngModel)]="content" />
+    </p>
+  </div>
+  <button (click)="sendMessage()">Envoyer</button>
+</div>
+<fieldset>
+  <legend>Discussion</legend>
+  @for (m of listeMessage; track $index) {
+    <p>
+      <strong>{{m.username}}</strong> : {{m.content}}
+      </p>
+
+
+  }
+</fieldset>

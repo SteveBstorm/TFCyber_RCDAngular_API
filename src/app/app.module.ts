@@ -19,6 +19,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { UpfileComponent } from './components/upfile/upfile.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UpfileComponent } from './components/upfile/upfile.component';
     NavComponent,
     AuthComponent,
     ErrorComponent,
-    UpfileComponent
+    UpfileComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
