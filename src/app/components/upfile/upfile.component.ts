@@ -13,8 +13,18 @@ export class UpfileComponent {
   constructor(private fileService : FileService){}
 
   loadFile(e : any) {
+
     this.myfile = e.target.files[0]
-    console.log(this.myfile?.name)
+
+    // console.log(e.target.files[0].name)
+    // let test = e.target.files[0].name.split('.')
+
+    // if(test[test.length -1] != "pdf") {
+    //   console.log("va mourrir")
+    // }
+    // else {
+    //   this.myfile = e.target.files[0]
+    // }
   }
 
   startUpload(){
