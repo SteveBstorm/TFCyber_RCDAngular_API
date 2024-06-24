@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class MovieService {
 
-  private url : string = "https://localhost:7158/api/Movie"
+  private url : string = "http://tfcybersecu.somee.com/api/Movie"
 
   constructor(private client : HttpClient) { }
 

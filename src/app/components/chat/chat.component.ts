@@ -9,7 +9,7 @@ import * as signalr from '@microsoft/signalr';
 })
 export class ChatComponent {
  private hubConnection? : signalr.HubConnection
-  url : string = "https://localhost:7158/chathub"
+  url : string = "http://tfcybersecu.somee.com/chathub"
 
   listeMessage : Message[] = []
 

@@ -7,7 +7,7 @@ import { Person } from '../models/person.model';
   providedIn: 'root'
 })
 export class PersonService {
-  private url : string = "https://localhost:7158/api/person"
+  private url : string = "http://tfcybersecu.somee.com/api/person"
 
   constructor(private client : HttpClient) { }
 

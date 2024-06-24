@@ -8,7 +8,7 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class AuthService {
 
-  private url : string = "https://localhost:7158/api/auth"
+  private url : string = "http://tfcybersecu.somee.com/api/auth"
 
   isConnectedSubject : Subject<boolean> = new Subject<boolean>()
 
